@@ -7,7 +7,7 @@ A tool to conbine PDF files like
 - [original PDF3](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/sample3.pdf)
 - [original PDF4](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/sample4.pdf)
 
-- [output][https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/output.pdf]
+- [output](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/output.pdf)
 
 It looks like lasagna, isn't it?
 
