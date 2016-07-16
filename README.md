@@ -29,12 +29,13 @@ You can:
 ## Usage
 
 Usage: lpdf  [OPTIONS] FILE1 FILE2 ...
- | Options         | Description                           |
- | :-------------- | :------------------------------------ |
- | -a, --all       | all pages will be processed           |
- | -e, --end       | specify the end page                  |
- | -h, --help      | show this guide                       |
- | -l, --landscape | landscape mode                        |
- | --nup, --matrix | configuration of page, default is 1x1 |
- | -o, --output    | A name of output file                 |
- | -s, --start     | specifiy the beginning page           |
+
+| Options         | Description                           |
+| :-------------- | :------------------------------------ |
+| -a, --all       | all pages will be processed           |
+| -e, --end       | specify the end page                  |
+| -h, --help      | show this guide                       |
+| -l, --landscape | landscape mode                        |
+| --nup, --matrix | configuration of page, default is 1x1 |
+| -o, --output    | A name of output file                 |
+| -s, --start     | specifiy the beginning page           |
