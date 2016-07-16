@@ -2,11 +2,13 @@
 
 A tool to conbine PDF files like
 
+input files:
 - [original PDF1](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/sample1.pdf)
 - [original PDF2](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/sample2.pdf)
 - [original PDF3](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/sample3.pdf)
 - [original PDF4](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/sample4.pdf)
 
+output file:
 - [output](https://github.com/nukazuka/Lasagna_PDF/blob/master/sample/output.pdf)
 
 It looks like lasagna, isn't it?
