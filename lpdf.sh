@@ -15,7 +15,9 @@ function usage()
 
 function GetNPDFPage()
 {
-    echo `python -c "import os;from CoreGraphics import *;print(CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithFilename('$1')).getNumberOfPages())"`
+#    echo `python -c "import os;from CoreGraphics import *;print(CGPDFDocumentCreateWithProvider(CGDataProviderCreateWithFilename('$1')).getNumberOfPages())"`
+
+    echo `pdfinfo "${1}" | grep Pages | sed 's/[^0-9]*//'`
 }
 
 # initialization
