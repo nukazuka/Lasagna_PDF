@@ -38,6 +38,7 @@ Usage: lpdf  [OPTIONS] FILE1 FILE2 ...
 | -e, --end       | specify the end page                  |
 | -h, --help      | show this guide                       |
 | -l, --landscape | landscape mode                        |
+| -t,--transposition | transposition mode                 |
 | --nup, --matrix | configuration of page, default is 1x1 |
 | -o, --output    | A name of output file                 |
 | -s, --start     | specifiy the beginning page           |
