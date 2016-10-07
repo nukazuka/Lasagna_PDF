@@ -8,6 +8,7 @@ function usage()
     echo -e "  -e,    --end       : specify the end page"
     echo -e "  -h,    --help      : show this guide"
     echo -e "  -l,    --landscape : landscape mode"
+    echo -e "  -t,--transposition : transposition mode"
     echo -e "  --nup, --matrix    : configuration of page, default is 1x1"
     echo -e "  -o,    --output    : A name of output file"
     echo -e "  -s,    --start     : specifiy the beginning page"
@@ -68,6 +69,10 @@ do
             ;;
         '-l'|'--landscape' )
 	    flag_landscape="--landscape"
+            shift 1
+            ;;
+        '-t'|'--transposition' )
+	    flag_transposition="--transposition"
             shift 1
             ;;
         '--'|'-' )
@@ -153,13 +158,15 @@ fi
 echo "---- configurations ---- "
 echo "page: $start_page - $end_page"
 echo "nup: $nup"
+echo "transposition: $flag_transposition"
+echo
 
 # make the statement to process page by page 
 target=""
+
 # loop over all pages to be processed
 for num in `seq ${start_page} ${end_page}`
 do
-
     # loop over all files
     for file in ${param[@]}
     do
@@ -167,6 +174,17 @@ do
     done
 done
 
+if [ "${flag_transposition}" != "" ]
+then
+
+    target=`Lasagna_PDF_transposition ${nup} ${target}`
+    #    nup
+#    nup="`Lasagna_PDF_transposition ${nup} column`x`Lasagna_PDF_transposition ${nup} row`"
+    nup="`Lasagna_PDF_transposition ${nup} row`x`Lasagna_PDF_transposition ${nup} column`"
+fi
+
+#echo $target
+#echo ${target_new[@]}
 pdfjam --nup ${nup} ${flag_landscape} --outfile ${output} $target
 
 
