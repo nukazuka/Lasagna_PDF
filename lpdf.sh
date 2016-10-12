@@ -181,7 +181,6 @@ then
 
     target=`Lasagna_PDF_transposition ${nup} ${target}`
     #    nup
-#    nup="`Lasagna_PDF_transposition ${nup} column`x`Lasagna_PDF_transposition ${nup} row`"
     nup="`Lasagna_PDF_transposition ${nup} row`x`Lasagna_PDF_transposition ${nup} column`"
 fi
 

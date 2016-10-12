@@ -99,7 +99,7 @@ int main( int argc, char* argv[] )
 
 	  column_counter = 0;
 	  row_counter = 0;
-
+	  
 	  // store elements with transposition
 	  for( unsigned int k=0; k<vvtarget_original[0].size(); k++ )
 	    for( unsigned int j=0; j<vvtarget_original.size(); j++ )
@@ -108,17 +108,37 @@ int main( int argc, char* argv[] )
 	  // add all elements into "string target"
 	  for( unsigned int j=0; j<vvtarget_transposed.size(); j++ )
 	    for( unsigned int k=0; k<vvtarget_transposed[j].size(); k++ )
-	      {
 		target += vvtarget_transposed[j][k];
-	      }
 
 	  // erase all elements for next matrix
 	  EraseVector2D( vvtarget_original );
 	  EraseVector2D( vvtarget_transposed );
+	}
 
+      // if (#page to be accumulated) % (row*colum) != 0
+      // some pages are remained
+      // In this case, not transposed at this moment
+      if( i == vargv.size()-1 )
+	{
+
+	  int remain_num = vargv.size() - row * column;
+	  int counter = 0;
+
+	  // loop over remained pages
+	  for( unsigned int j=0; j<vvtarget_original.size(); j++ )
+	    for( unsigned int k=0; k<vvtarget_original[0].size(); k++ )
+	      {
+		counter++;
+		target += vvtarget_original[j][k];
+		if( counter == remain_num )
+		  {
+		    j = vvtarget_original.size();
+		    k = vvtarget_original[0].size();
+		  }
+	      }
 	}
     }
-
+  
   // this is the output of the result
   cout << target << endl;
   return 0;
@@ -137,5 +157,4 @@ void EraseVector2D( vector < vector < string > >& vec )
 {
   for( unsigned int i=0; i<vec.size(); i++ )
     vec[i].erase( vec[i].begin(), vec[i].end() );
-
 }
