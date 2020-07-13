@@ -20,6 +20,7 @@ This tool is actually just a wrapper of pdfjam.
 - [pdfjam](http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam/)
    - if you have already installed [TeX Live](http://www.tug.org/texlive/), it should be enough
 - [pdfinfo](https://poppler.freedesktop.org/)
+   - installing xpdf from HomeBrew is OK
 
 ## Installation
 
